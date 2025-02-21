@@ -330,8 +330,13 @@
     padding: 50px 8px 30px;
 }
 .blue-bg-3 {
-    padding: 30px 15px;
+    padding: 25px 45px;
+    background: url(../images/blue-bg-3-mobile.png) no-repeat center;
+    background-size: cover;
 }
+
+.blue-bg-3 h3{font-size: 20px!important;
+    line-height: 32px!important;}
 
 .roofpro-section {
     width: 90%;

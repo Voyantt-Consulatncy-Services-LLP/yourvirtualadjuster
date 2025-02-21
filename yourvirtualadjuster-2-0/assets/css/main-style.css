@@ -574,8 +574,19 @@ header{
     min-height: 450px;
     transform: skewY(-10deg);
     padding: 80px 8px 10px;
+    background: #ffffff;
+    color: var(--primary-color);
 }
+
+/* Target the 2nd and 4th pricing cards for blue background and white text */
+.pricing-coulmn:nth-child(2) .pricing-card,
+.pricing-coulmn:nth-child(4) .pricing-card {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
 .pricing-header {
+    color: var(--white-color);
     background: var(--primary-color);
     padding: 18px 40px;
     font-weight: var(--font-weight-bold);
@@ -587,6 +598,13 @@ header{
     top: -25px;
     transform: skewY(10deg);
 }
+/* For 2nd and 4th cards, change background to white and text color to primary */
+.pricing-coulmn:nth-child(2) .pricing-header,
+.pricing-coulmn:nth-child(4) .pricing-header {
+    background: var(--white-color);
+    color: var(--primary-color);
+}
+
 .pricing-card .card-body{
     transform: skewY(10deg);
 }
@@ -723,7 +741,8 @@ header{
 
 
 .roofpro-section{
-    background: url(../images/grey-bg.png) no-repeat center center;
+    /* background: url(../images/grey-bg.png) no-repeat center center; */
+    background: url(../images/grey-bg1.png) no-repeat center center;
     background-size: cover;
     padding: 2rem 0;
 }
