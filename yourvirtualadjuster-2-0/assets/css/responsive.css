@@ -1,6 +1,16 @@
 /* Responsive CSS */
 
-
+@media (min-width: 2500px) and (max-width: 3200px) {
+    .platform-features-section{
+        background-size: 60%;
+    }
+    .pricing-section{
+        background-size: 60%;
+    }
+    .testimonial-holder::before, .testimonial-holder::after {
+        width: 42%;
+    }
+}
 
 /* Tablet Screens (>= 576px and < 992px) */
 @media (min-width: 576px) and (max-width: 991px) {
@@ -287,6 +297,9 @@
         align-items: center;
         text-align: center;
     }
+    .pricing-section .d-flex.apps-icons{
+        flex-wrap: nowrap;
+    }
     .w-50 {
         width: 100% !important;
     }
@@ -299,11 +312,15 @@
     .lh-sm {
     line-height: 1.85 !important;
 }
+.platform-list{
+    padding: 0;
+}
 .platform-list li {
-        padding-left: 27px;
-        padding-top: 22px;
-        text-align: left;
-        font-size: 13px;
+    padding-top: 0;
+    text-align: left;
+    font-size: 13px;
+    padding-bottom: 10px;
+    padding-left: 31px;
 }
 .platform-list li:before {
     background-size: 18px;
@@ -440,5 +457,12 @@ footer h5{
 }
 .flex-md-nowwrap{
     flex-wrap: wrap !important;
+}
+.pricing-section:after {
+    width: 104px;
+    height: 30%;
+    bottom: auto;
+    background-size: contain;
+    top: 29%;
 }
 }

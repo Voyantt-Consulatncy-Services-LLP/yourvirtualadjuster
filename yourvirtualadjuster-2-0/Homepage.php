@@ -91,7 +91,7 @@ get_header();
             <?php if( have_rows('claim_steps') ): ?>
                 <div class="d-flex justify-content-center mt-4 flex-wrap flex-sm-wrap flex-md-nowwrap">
                     <?php while( have_rows('claim_steps') ): the_row(); ?>
-                        <div class="card card-custom m-2">
+                        <div class="card card-custom m-3">
                             <div class="circle mb-3">
                                 <span><?php the_sub_field('step_number'); ?></span>
                             </div>
@@ -219,7 +219,7 @@ get_header();
                             </ul>
                         <?php endif; ?>
 
-                        <div class="w-50 d-flex align-items-center justify-content-center mt-5">
+                        <div class="w-50 d-flex align-items-center justify-content-center mt-5 apps-icons">
                             <?php if( get_sub_field('pricing_playstore_buttons_link') && get_sub_field('pricing_playstore_buttons_image') ): ?>
                                 <a href="<?php the_sub_field('pricing_playstore_buttons_link'); ?>" target="_blank">
                                     <img src="<?php the_sub_field('pricing_playstore_buttons_image'); ?>" alt="Play Store" class="shadow border-radius10 me-2">
@@ -247,7 +247,7 @@ get_header();
                     </div>
 
                     <?php if( have_rows('pricing_card_repeater') ): ?>
-                        <div class="d-flex justify-content-between align-items-stretch g-4 mt-5 flex-wrap flex-sm-wrap flex-md-nowwrap">
+                        <div class="d-flex justify-content-between align-items-stretch g-4 my-5 flex-wrap flex-sm-wrap flex-md-nowwrap">
                             <?php while( have_rows('pricing_card_repeater') ) : the_row(); ?>
                                 <div class="pricing-coulmn p-2 w-25 mx-4 h-100 align-self-stretch">
                                     <div class="card pricing-card">

@@ -47,10 +47,11 @@ a:hover{
 }
 .layout-holder{
     margin: 0 auto;
+    width: 100%;
 }
 p{
     line-height: 1.9;
-    color: #000;
+    color: var(--black-color);
 }
 /* Font-weight */
 .font-w-300{
@@ -148,10 +149,14 @@ p{
 
 /* Extra */
 hr{
-    color: #1F4392;
+    color: var(--primary-color);
 }
+.flex-md-nowwrap{
+    flex-wrap: nowrap !important;
+}
+
 .shadow{
-    box-shadow: 0px 5px 15px 2px rgba(0, 0, 0, 0.15)!important;
+    box-shadow: 0px 5px 15px 2px rgba(0, 0, 0, 0.18)!important;
 }
 .border-bottom-orange{
     position: relative;
@@ -190,9 +195,7 @@ hr{
 .border-radius-xl{
     border-radius: var(--bs-border-radius);
 }
-.flex-md-nowwrap{
-    flex-wrap: nowrap !important;
-}
+
 /* Header */
 header{
     position: absolute;
@@ -393,12 +396,10 @@ header{
 
 /* Claim Section */
 .card-custom {
-    width: 18rem;
+    width: 20rem;
     border-radius: 12px;
-    /* padding: 15px 8px 8px; */
-    padding: 25px 15px 8px;
+    padding: 25px 25px 8px;
     text-align: center;
-    box-shadow: 0px 7px 14.8px 3px rgba(0, 0, 0, 0.1);
     border: none;
 }
 
@@ -471,6 +472,7 @@ header{
 .platform-features-section{
     background: url(../images/hexa-bg.png) no-repeat left bottom;
     padding: 6rem 0 6rem;
+    background-size: 58%;
 }
 .left-mobile-holder{
     position: relative;
@@ -535,21 +537,33 @@ header{
 
 /*Pricing Section*/
 .pricing-section{
-    background: url(../images/hexa-bg-2.png) no-repeat top left,
-                url(../images/half-circle.png) no-repeat center right;
+    background: url(../images/hexa-bg-2.png) no-repeat top left;
     padding: 2rem 0 6rem;
+    background-size: 58%;
+    position: relative;
+}
+.pricing-section:after{
+    position: absolute;
+    right: 0;
+    content: '';
+    background: url(../images/half-circle.png) no-repeat center right;
+    width: 372px;
+    height: 54%;
+    bottom: 0;
+    background-size: cover;
+    z-index: -1;
 }
 .pricing-section .border-bottom-orange:after{
     right: 0;
     margin: 0 auto;
 }
 .card{
-    box-shadow: 0px 3px 12px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 12px 2px rgba(0, 0, 0, 0.12);
     border: none;
 }
 .platform-list{
     list-style: none;
-    padding: 0;
+    padding: 0 0 0 40px;
     margin: 0;
 }
 .platform-list li{
@@ -569,7 +583,7 @@ header{
 }
 .pricing-card {
     border-radius: 20px;
-    box-shadow: 0px 5px 15px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 15px 1px rgba(0, 0, 0, 0.12);
     position: relative;
     min-height: 450px;
     transform: skewY(-10deg);
