@@ -13,7 +13,7 @@
     --font-48: 48px;
     --font-xl: 64px;
     --bs-border-radius: 1.375rem;
-    --font-weight-300: 400;
+    --font-weight-300: 300;
     --font-weight-400: 400;
     --font-weight-md: 500;
     --font-weight-bold: 600;
@@ -26,6 +26,7 @@
 html{
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 /* General Styles */
 body {
@@ -401,6 +402,7 @@ header{
     padding: 25px 25px 8px;
     text-align: center;
     border: none;
+    justify-content: space-around;
 }
 
 /* Multicolor Circular Border */
@@ -779,6 +781,7 @@ footer {
     border: 1px solid var(--white-color);
     color: var(--white-color);
     padding: 10px 0;
+    margin-bottom: 45px;
     width: 100%;
     border-width: 0 0 1px 0;
 }
@@ -885,27 +888,54 @@ footer {
 
 .privacy-container li {
     line-height: 1.9;
-    list-style-type: disc;
+    list-style-type: none;
+    position: relative;
+    padding: 0 0 15px;
 }
 
-.privacy-container li::marker {
-    font-size: 1.8em;
-    display: inline;
-    color: var(--primary-color) !important;
+.privacy-container li::before {
+    content: "";
+    position: absolute;
+    left: -22px;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
 }
 
 .privacy-container ol, ul {
     padding-left: 1.5rem;
 }
 
-.privacy-sidebar a:hover {
-    border-bottom: 2px solid var(--secondary-color);
-    /* width: fit-content; */
+.privacy-sidebar li{
+    display: inline-block;
 }
+.privacy-sidebar li:after {
+  display:block;
+  content: '';
+  border-bottom: solid 3px var(--secondary-color);  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+.privacy-sidebar li:hover:after { transform: scaleX(1); }
 
 /* Active state */
 .privacy-sidebar a.active {
     color: #0056b3;
     font-weight: bold;
     border-left: 4px solid var(--secondary-color);
+}
+.privacy-container p, .privacy-container li{
+    font-weight: var(--font-weight-md);
+}
+.wpcf7-response-output {
+    color: var(--white-color);
+}
+.wpcf7-not-valid-tip {
+    position: absolute;
+    bottom: -55px;
+}
+.wpcf7-form-control-wrap.recaptcha .wpcf7-not-valid-tip {
+    bottom: -26px;
 }

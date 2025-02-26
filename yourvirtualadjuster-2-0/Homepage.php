@@ -41,44 +41,52 @@ get_header();
     <section class="our-solution-section" id="our-solution">
         <div class="container">
             <h3 class="font-24 font-w-600 black-font border-bottom-orange pb-4"><?php the_field('our_solutions_title'); ?></h3>
-            <div class="row tab-container">
-                <!-- Sidebar (Tabs) -->
-                <div class="col-md-5">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
-                        <button class="nav-link active" id="tab-1" data-bs-toggle="pill" data-bs-target="#content-1" role="tab">
-                            <span class="tab-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/your-claims-team-icon.svg" alt=""></span> Your Claims Team
-                        </button>
-                        <button class="nav-link" id="tab-2" data-bs-toggle="pill" data-bs-target="#content-2" role="tab">
-                            <span class="tab-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/public-adjusting-services-icon.svg" alt=""></span> Public Adjusting Services
-                        </button>
-                        <button class="nav-link" id="tab-3" data-bs-toggle="pill" data-bs-target="#content-3" role="tab">
-                            <span class="tab-icon"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/appraisals-services-icon.svg" alt=""></span> Appraisals
-                        </button>
-                    </div>
-                </div>
 
-                <!-- Content Area -->
-                <div class="col-md-7">
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="content-1" role="tabpanel">
-                            <h3>New <span class="text-secondary">Claims</span></h3>
-                            <p>“YCT” acts as your fully integrated, outsourced claims department, handling all aspects of the claims process.</p>
-                            <p>Once the contingency agreement has been signed to settlement, including carrier adjuster meetings. We operate seamlessly under your brand, allowing your team to focus on scaling and sales while we manage the complexities of claims. </p>
-                            <hr>
-                            <h3><span class="text-secondary">Supplementing</span></h3>
-                            <p>“YCT” acts as your fully integrated, outsourced claims department, handling all aspects of the claims process. Once the contingency agreement has been signed to settlement, including carrier adjuster meetings. We operate seamlessly under your brand, allowing your team to focus on scaling and sales while we manage the complexities of claims. </p>
-                        </div>
-                        <div class="tab-pane fade" id="content-2" role="tabpanel">
-                            <h3>Public Adjusting <span class="text-secondary">Services</span></h3>
-                            <p>Enhance your claims management with Public Adjusting Services powered by Bulldog Adjusters, seamlessly integrated into our platform. Our team of expert adjusters is committed to fiercely advocating for your customer at every stage of the claims process. We thoroughly review every detail, tenaciously negotiate on their behalf, and ensure nothing is overlooked. From the initial assessment to the final resolution, we stand by homeowners, providing unwavering support and clear communication. Our mission is simple: to fight for the settlement they deserve while giving them the confidence and peace of mind to navigate this often-complicated process with ease.</p>
-                        </div>
-                        <div class="tab-pane fade" id="content-3" role="tabpanel">
-                            <h3>Appraisals <span class="text-secondary">Services</span></h3>
-                            <p>Upgrade your claims management process by integrating appraisal services seamlessly with the YVA platform. Our expert appraisers deliver precise and timely assessments and efficient dispute resolution. Whether you need a standalone appraisal or one during an active claim, we seamlessly integrate into your workflow. Enhance communication and provide fair outcomes for your clients with our comprehensive appraisal services.</p>
+            <?php if( have_rows('our_solutions') ): ?>
+                <div class="row tab-container">
+                    
+                    <!-- Sidebar (Tabs) -->
+                    <div class="col-md-5">
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+                            <?php $tab_index = 1; ?>
+                            <?php while( have_rows('our_solutions') ) : the_row(); ?>
+                                <button class="nav-link <?php echo ($tab_index === 1) ? 'active' : ''; ?>" 
+                                        id="tab-<?php echo $tab_index; ?>" 
+                                        data-bs-toggle="pill" 
+                                        data-bs-target="#content-<?php echo $tab_index; ?>" 
+                                        role="tab">
+                                    <span class="tab-icon">
+                                        <img src="<?php the_sub_field('tab_icon'); ?>" alt="">
+                                    </span> 
+                                    <?php the_sub_field('tab_title'); ?>
+                                </button>
+                                <?php $tab_index++; ?>
+                            <?php endwhile; ?>
                         </div>
                     </div>
+
+                    <!-- Content Area -->
+
+                    <div class="col-md-7">
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <?php 
+                            $content_index = 1; 
+                            reset_rows('our_solutions'); // Reset to loop through content again
+                            ?>
+                            <?php while( have_rows('our_solutions') ) : the_row(); ?>
+                                <div class="tab-pane fade <?php echo ($content_index === 1) ? 'show active' : ''; ?>" 
+                                    id="content-<?php echo $content_index; ?>" 
+                                    role="tabpanel">
+                                    <?php the_sub_field('tab_content'); ?>
+                                </div>
+                                <?php $content_index++; ?>
+                            <?php endwhile; ?>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
+            <?php endif; ?>
+                
         </div>
     </section>
 
@@ -184,14 +192,13 @@ get_header();
 
     <section class="pricing-section">
         <div class="container">
-
             <?php if( have_rows('manage_claims_cta') ): ?>
                 <?php while( have_rows('manage_claims_cta') ) : the_row(); ?>
-                    <div class="d-flex justify-content-between align-items-center blue-bg-2 px-4 py-4 mb-5">
+                    <div class="d-flex justify-content-lg-between justify-content-center align-items-center blue-bg-2 px-4 py-4 mb-5">
                         <div>
                             <h3 class="text-white font-48 font-w-500 secondary-font mb-0"><?php the_sub_field('pricing_main_heading'); ?></h3>
                         </div>
-                        <a href="<?php the_sub_field('pricing_cta_button_link'); ?>" class="btn btn-secondary text-uppercase px-4 py-2 rounded me-4 shadow" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/calender-icon.svg" alt="" class="small-icon me-2"> <?php the_sub_field('pricing_cta_button_text'); ?></a>
+                        <a href="<?php the_sub_field('pricing_cta_button_link'); ?>" class="btn btn-secondary text-uppercase px-4 py-2 rounded me-lg-4 shadow" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/calender-icon.svg" alt="" class="small-icon me-2"> <?php the_sub_field('pricing_cta_button_text'); ?></a>
                     </div>
                 <?php endwhile; ?>
             <?php endif; ?>
@@ -249,7 +256,7 @@ get_header();
                     <?php if( have_rows('pricing_card_repeater') ): ?>
                         <div class="d-flex justify-content-between align-items-stretch g-4 my-5 flex-wrap flex-sm-wrap flex-md-nowwrap">
                             <?php while( have_rows('pricing_card_repeater') ) : the_row(); ?>
-                                <div class="pricing-coulmn p-2 w-25 mx-4 h-100 align-self-stretch">
+                                <div class="pricing-coulmn p-2 w-25 mx-xl-4 mx-2 h-100 align-self-stretch">
                                     <div class="card pricing-card">
                                         <div class="pricing-header font-20">
                                             <?php the_sub_field('plan_name'); ?>
@@ -265,7 +272,7 @@ get_header();
 
                     <div class="d-none justify-content-between align-items-stretch g-4 mt-5 flex-wrap flex-sm-wrap flex-md-nowwrap">
                         <!-- Card 1 -->
-                        <div class="pricing-coulmn p-2 w-25 mx-4 h-100 align-self-stretch">
+                        <div class="pricing-coulmn p-2 w-25 mx-xl-4 mx-2 h-100 align-self-stretch">
                             <div class="card pricing-card">
                                 <div class="pricing-header font-20">YCT - New Claims</div>
                                 <div class="card-body d-flex flex-column">
@@ -280,7 +287,7 @@ get_header();
                             </div>
                         </div>
                         <!-- Card 2 -->
-                        <div class="pricing-coulmn p-2 w-25 mx-4 h-100 align-self-stretch">
+                        <div class="pricing-coulmn p-2 w-25 mx-xl-4 mx-2 h-100 align-self-stretch">
                             <div class="card pricing-card">
                                 <div class="pricing-header font-20">YCT - Supplementing</div>
                                 <div class="card-body d-flex flex-column">
@@ -294,7 +301,7 @@ get_header();
                             </div>
                         </div>
                         <!-- Card 3 -->
-                        <div class="pricing-coulmn p-2 w-25 mx-4 h-100 align-self-stretch">
+                        <div class="pricing-coulmn p-2 w-25 mx-xl-4 mx-2 h-100 align-self-stretch">
                             <div class="card pricing-card">
                                 <div class="pricing-header font-20">Public Adjusting</div>
                                 <div class="card-body d-flex flex-column">
@@ -306,7 +313,7 @@ get_header();
                             </div>
                         </div>
                         <!-- Card 4 -->
-                        <div class="pricing-coulmn d-flex flex-column p-2 w-25 mx-4 h-100 align-self-stretch">
+                        <div class="pricing-coulmn d-flex flex-column p-2 w-25 mx-xl-4 mx-2 h-100 align-self-stretch">
                             <div class="card pricing-card">
                                 <div class="pricing-header font-20">Appraisals</div>
                                 <div class="card-body d-flex flex-column">
@@ -399,7 +406,7 @@ get_header();
                 <div class="d-flex justify-content-between align-items-center my-5 w-75">
                     <?php if( have_rows('roofpro_logos') ): ?>
                         <?php while( have_rows('roofpro_logos') ) : the_row(); ?>
-                            <img src="<?php the_sub_field('roofpro_logo_image');?>" class="mx-4" alt="IKO Advantage">
+                            <img src="<?php the_sub_field('roofpro_logo_image');?>" class="mx-md-4" alt="IKO Advantage">
                         <?php endwhile; ?>
                     <?php endif; ?>                
                 </div>
@@ -409,6 +416,10 @@ get_header();
     </section>
     
 </div>
+
+<style>
+html{overflow-x:hidden;}
+</style>    
 
 <?php
 get_footer();
