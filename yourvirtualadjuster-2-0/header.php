@@ -89,8 +89,8 @@
                     </nav>
                 </div>
 				<div class="d-flex header-buttons-holder ms-2">
-                    <a href="tel:855-775-7550" class="btn btn-secondary text-uppercase px-4 py-2 rounded"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/call-icon.svg" alt="" class="small-icon me-2"> Call Us <strong>: 855-775-7550</strong></a>
-                    <a href="https://app.yva.claims/" class="btn btn btn-outline-secondary text-uppercase px-4 py-2 ms-3 <?php echo (is_front_page() || is_home()) ? 'btn-outline-secondary' : 'btn-outline-light'; ?>" target="_blank">Login</a>
+                    <a href="tel:855-775-7550" class="btn btn-secondary text-uppercase px-xl-4 py-xl-2 rounded"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/call-icon.svg" alt="" class="small-icon me-2"> Call Us <strong>: 855-775-7550</strong></a>
+                    <a href="https://app.yva.claims/" class="btn btn btn-outline-secondary text-uppercase px-xl-4 py-xl-2 ms-3 <?php echo (is_front_page() || is_home()) ? 'btn-outline-secondary' : 'btn-outline-light'; ?>" target="_blank">Login</a>
                 </div>
             </div>
         </div>

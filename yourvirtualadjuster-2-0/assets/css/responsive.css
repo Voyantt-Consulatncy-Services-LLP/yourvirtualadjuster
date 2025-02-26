@@ -1,57 +1,603 @@
 /* Responsive CSS */
 
-
-
-/* Tablet Screens (>= 576px and < 992px) */
-@media (min-width: 576px) and (max-width: 991px) {
-    .logo {
-        width: 50%;
+@media (min-width: 2500px) and (max-width: 3200px) {
+    .platform-features-section{
+        background-size: 60%;
     }
-    
-    .nav-holder {
-        width: 100%;
-        text-align: center;
+    .pricing-section{
+        background-size: 60%;
     }
-    
-    .navbar-collapse {
-        justify-content: center;
-    }
-    
-    .banner-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    
-    .left-hero-section {
-        padding: 15% 0;
-    }
-    
-    .mobile-mockups {
-        width: 80%;
-        margin-left: 0;
-    }
-    
-    .our-solution-section {
-        background-size: contain;
-        padding: 5rem 0;
-    }
-    
-    .tab-container {
-        margin-top: 6rem;
-    }
-    
-    .claim-section .d-flex {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .pricing-section .d-flex {
-        flex-wrap: wrap;
-        justify-content: center;
+    .testimonial-holder::before, .testimonial-holder::after {
+        width: 42%;
     }
 }
 
 
+@media screen and (max-width: 1440px) { 
+
+    :root {
+        --font-md: 14px;
+        --font-20: 18px;
+        --font-24: 22px;
+        --font-40: 36px;
+        --font-48: 44px;
+        --font-xl: 58px;
+    }
+
+    .navbar-nav .nav-link{margin-right: 8px;}
+
+    .right-hero-section {
+        padding-top: 6%;
+    }
+
+    .pricing-section:after{background-size: initial;}
+
+
+}
+
+
+@media screen and (max-width: 1399px) { 
+
+    :root {
+        --font-md: 14px;
+        --font-20: 18px;
+        --font-24: 22px;
+        --font-40: 36px;
+        --font-48: 40px;
+        --font-xl: 58px;
+    }
+
+    .navbar-nav .nav-link{margin-right: 5px;}
+
+    .right-hero-section {
+        padding-top: 8%;
+    }
+
+    .banner-section {
+        grid-template-columns: minmax(32%, 62%) 100%;
+    }
+
+
+    .left-mobile-holder:before {
+        height: 185px;
+        background-size: contain;
+    }
+    .left-mobile-holder:after {
+        left: -10px;
+        bottom: 0;
+        background-size: 60%;
+    }
+    .platform-features-section, .pricing-section {
+        padding: 3rem 0 3rem;
+    }
+
+    .pricing-section{
+        background: url(../images/hexa-bg-2.png) no-repeat top left;
+    }
+    .pricing-header{
+        top: -15px;
+        right: -25px;
+        padding: 12px 15px;
+    }
+    .large-mobile {
+        z-index: 3;
+        width: 52%;
+        margin: 0 auto 55px !important;
+    }
+
+    /* footer */
+    .footer-nav {
+        flex-wrap: wrap;
+        justify-content: start !important;
+    }
+    .copyright{
+        order: 2;
+    }
+
+}
+
+
+@media screen and (max-width: 1280px) { 
+
+    :root {
+        --font-md: 13px;
+        --font-20: 17px;
+        --font-24: 20px;
+        --font-40: 32px;
+        --font-48: 40px;
+        --font-xl: 52px;
+    }
+
+    .btn {
+        --bs-btn-font-size: 0.8rem;
+    }
+
+    .card-custom {padding: 15px 15px 8px;}
+    .banner-section {
+        grid-template-columns: minmax(30%, 62%) 100%;
+    }
+}
+
+
+@media screen and (max-width: 1199px) { 
+
+    :root {
+        --font-md: 13px;
+        --font-20: 16px;
+        --font-24: 18px;
+        --font-40: 30px;
+        --font-48: 38px;
+        --font-xl: 48px;
+    }
+    .ylla-logo-holder{
+        width: 220px;
+        right: -15px;
+    }
+    .our-solution-section {
+        padding: 5rem 0 2rem;
+    }
+    .tab-content hr {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    .tab-container {
+        margin-top: 4rem;
+    }
+    .partner-item{
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 1140px) {
+    .container, .container-lg, .container-md, .container-sm {
+        max-width: none;
+        padding: 0 20px;
+    }
+}
+
+
+@media screen and (max-width: 1024px) { 
+
+    :root {
+        --font-md: 12px;
+        --font-20: 15px;
+        --font-24: 16px;
+        --font-40: 28px;
+        --font-48: 36px;
+        --font-xl: 44px;
+    }
+
+    .copyright{
+        order: 2;
+    }
+    .line {
+        width: 50px;
+    }
+    .pricing-section h3{
+        width: 70%;
+    }
+    .pricing-section .btn-secondary{
+        width: 220px;
+    }
+}
+
+/* Tablet Screens (>= 576px and < 992px) */
+@media (min-width: 576px) and (max-width: 991px) {
+
+    :root {
+        --font-md: 14px;
+        --font-20: 16px;
+        --font-24: 18px;
+        --font-40: 24px;
+        --font-48: 32px;
+        --font-xl: 44px;
+    }
+
+    /* header */
+
+    .logo {
+        width: auto;
+        height: 80px;
+    } 
+    
+    .header-buttons-holder strong {
+        display: none;
+    }
+    
+    .header-buttons-holder .btn {
+        font-size: 12px;
+        overflow: visible;
+        white-space: nowrap;
+        padding: 8px 20px !important;
+        line-height: 15px;
+    }
+    
+    .small-icon {
+        width: auto;
+        height: 15px;
+    }
+    
+    .nav-holder {
+        width: auto;
+        text-align: center;
+        order: 2;
+        position: relative;
+    }
+    
+    .navbar-toggler {
+        border: none;
+        background: transparent;
+    }
+    
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+    
+    .navbar-collapse {
+        background-color: var(--white-color);
+        padding: 15px;
+        position: absolute;
+        right: 0;
+        top: 48px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .navbar-nav .nav-link {
+        color: black;
+    }
+    
+    /* Hamburger Icon Variations */
+    .hamburger-black .navbar-toggler-icon {
+        filter: invert(0);
+    }
+    
+    .hamburger-white .navbar-toggler-icon {
+        filter: invert(1);
+    }
+    
+    /* Home page starts */
+    
+    .banner-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .left-hero-section, .right-hero-section {
+        width: 100%;
+        padding: 20px 0;
+    }
+    .left-hero-section {
+        background-position: left;
+        background-size: contain;
+        text-align: left;
+        padding-left: 55px;
+    }
+    .mobile-mockups {
+        width: 80%;
+        margin-left: 0;
+        margin-top: 50px;
+    }
+    .right-hero-section{
+        text-align: center;
+        padding: 40px 0;
+    }
+    .right-hero-section{
+        align-items: center;
+        justify-content: center;
+    }
+    .right-hero-section .align-items-start{
+        align-items: center !important;
+    }
+    .line-container {
+        padding: 0 10px !important;
+    }
+    .line {
+        width: 33px;
+        margin-left: 15px;
+    }
+    .line::before, .line::after {
+        width: 6px;
+        height: 6px;
+    }
+    .line::before {
+        margin-left: -23px;
+    }
+    .line::after {
+        right: 4px;
+    }
+
+    /* our solution */
+
+    .nav-pills .nav-link{text-align: left;}
+    .our-solution-section {
+        background-size: contain;
+        padding: 6rem 0 0rem;
+    }
+    .tab-icon {
+        width: 40px;
+        height: 40px;
+        line-height: 36px;
+    }
+    .tab-icon img{
+    width: 55%;
+    }
+    .tab-container {
+        margin-top: 4rem;
+    }
+    .tab-content hr {
+        margin-top: 18px;
+        margin-bottom: 18px;
+    }
+    .nav-pills .nav-link {
+        padding: 8px;
+    }
+    .nav-pills .nav-link.active::after, .nav-pills .nav-link:hover::after{
+        display: none;
+    }
+    .tab-content {
+        padding: 18px 0;
+    }
+    .border-top-orange:after{
+        width: 35%;
+    }
+    .card-custom {
+        width: 49%;
+        margin: 30px 0!important;
+    }
+    .claim-section.py-5{
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    .claim-section .d-flex {
+        align-items: center;
+        justify-content: space-between!important;
+    }
+    .blue-cta{
+        text-align: center;
+    }
+    .blue-cta .btn{
+        margin: 20px auto 0 !important;
+    }
+    .left-mobile-holder:before {
+        height: 185px;
+        background-size: contain;
+    }
+    .left-mobile-holder:after {
+        left: -10px;
+        bottom: 0;
+        background-size: 60%;
+    }
+    .platform-features-section, .pricing-section {
+        padding: 3rem 0 3rem;
+        background-size: contain;
+    }
+
+    .pricing-section{
+        background: url(../images/hexa-bg-2.png) no-repeat top left;
+        background-size: contain;
+    }
+    .large-mobile {
+        z-index: 3;
+        width: 52%;
+        margin: 0 auto 55px !important;
+    }
+    .accordion-item .accordion-button{
+        padding: 10px;
+    }
+    .accordion-body {
+        padding: 10px;
+    }
+    .pricing-section .btn{
+        margin: 20px auto 0;
+    }
+    .pricing-section .d-flex {
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+    }
+    .pricing-section h3{
+        width: auto;
+    }
+    .pricing-section .btn-secondary{
+        width: auto;
+    }
+    .pricing-section .d-flex.apps-icons{
+        flex-wrap: nowrap;
+    }
+    .w-50 {
+        width: 100% !important;
+    }
+    .w-75 {
+        width: 100% !important;
+    }
+    .pricing-coulmn.w-25 {
+        width: 47% !important;
+    }
+    .lh-sm {
+        line-height: 1.85 !important;
+    }
+    .platform-list li {
+        padding-top: 0;
+        text-align: left;
+        font-size: 13px;
+        padding-bottom: 10px;
+        padding-left: 31px;
+    }
+    .platform-list li:before {
+        background-size: 18px;
+    }
+    /* .pricing-coulmn{width:43%!important;} */
+    .pricing-section .card img{
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .pricing-section .card.d-flex{
+        flex-wrap: nowrap;
+    }
+    .pricing-header {
+        padding: 18px 31px;
+        right: 0;
+        top: -25px;
+        left: 0;
+        margin: 0 auto;
+        width: 90% !important;
+    }
+    .pricing-card {
+        margin-bottom: 72px;
+        min-height: auto;
+        width: 100%;
+        padding: 50px 8px 30px;
+    }
+    .blue-bg-3 {
+        padding: 25px 45px;
+        background: url(../images/blue-bg-3-mobile.png) no-repeat center;
+        background-size: cover;
+    }
+
+    .blue-bg-3 h3{
+        font-size: 18px!important;
+        line-height: 32px!important;
+    }
+
+    .roofpro-section {
+        width: 90%;
+        margin: 0 auto 30px;
+        border-radius: 7px;
+        box-shadow: 0px 7px 14.8px 3px rgba(0, 0, 0, 0.25);
+    }
+    .roofpro-section img{
+        width: 150px;
+        margin: 0 !important;
+    }
+    .ylla-logo-holder {
+        right: 0;
+        width: 220px
+    }
+
+    .testimonial-card{
+        margin: 0 20px;
+        padding: 20px;
+        text-align: center;
+    }
+    .testimonial-holder::before, .testimonial-holder::after {
+        width: 70%;
+        height: 74%;
+    }
+    .testimonial-holder {
+        padding: 50px 0;
+    }
+    .partners-section {
+        padding: 4rem 0 2rem;
+    }
+    .partner-item img {
+        height: 65px;
+    }
+    .partner-item {
+        padding: 30px 10px;
+    }
+    footer {
+        padding: 2rem 0 0;
+    }
+
+    footer h2{
+        text-align: center;
+        margin-bottom: 50px !important;
+    }
+    .mt-5 {
+        margin-top: 2rem !important;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+    .btn-submit {
+        margin: 30px auto 0 !important;
+        display: table;
+    }
+    .contact-info {
+        width: 73%;
+        margin: 0 auto;
+    }
+    .contact-form input.form-field, .contact-form select.form-field{
+        padding:  20px 0;
+    }
+    .social {
+        margin: 0 auto !important;
+        width: 27%;
+    }
+    footer h5{
+        text-align: center;
+    }
+    .app-buttons {
+        width: 85%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .app-buttons img {
+        width: 100%;
+    }
+    .bottom-footer {
+        padding: 1rem 0;
+        margin-top: 20px;
+    }
+    .copyright{
+        order: 2;
+    }
+    .footer-nav {
+        flex-wrap: wrap;
+        padding: 0 0 20px;
+        justify-content: center !important;
+    }
+
+    .footer-nav li:not(:last-child)::after {
+        margin:0 10px;
+    }
+    .bottom-footer .justify-content-between {
+        justify-content: center !important;
+    }
+    .flex-md-nowwrap{
+        flex-wrap: wrap !important;
+    }
+    .pricing-section:after {
+        width: 104px;
+        height: 30%;
+        bottom: auto;
+        background-size: contain;
+        top: 29%;
+    }
+
+    /* Privacy policy page */
+
+    .privacy-section{height: 300px;}
+
+    .privacy-section::after {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><g fill="%231F4392"><rect fill="%23FFF" width="100%" height="100%"/><path d="M0 0v4s250 96 500 96 500-96 500-96V0H0Z"></path></g></svg>');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        height: 95px;
+    }
+
+    /* footer contact form */
+    .contact-form input.wpcf7-form-control, 
+    .contact-form select.wpcf7-form-control{
+        padding: 15px 0;
+        margin-bottom: 15px;
+    }
+
+    
+}
+@media (max-width: 767px) {
+    .ylla-logo-holder {
+        width: 180px;
+    }
+}
 /* Mobile First Approach */
 @media (max-width: 576px) {
     :root {
@@ -63,22 +609,22 @@
         --font-xl: 38px;
     }
     .btn {
-    --bs-btn-font-size: 0.7rem;
-}
-.my-5 {
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-}
-.mb-5 {
-    margin-bottom: 1rem !important;
-}
-.px-4 {
-    padding-right: .8rem !important;
-    padding-left: .8rem !important;
-}
-.p-5 {
-    padding: 1rem !important;
-}
+        --bs-btn-font-size: 0.7rem;
+    }
+    .my-5 {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .mb-5 {
+        margin-bottom: 1rem !important;
+    }
+    .px-4 {
+        padding-right: .8rem !important;
+        padding-left: .8rem !important;
+    }
+    .p-5 {
+        padding: 1rem !important;
+    }
     .logo {
         width: auto;
         height: 55px;
@@ -137,6 +683,8 @@
     .hamburger-white .navbar-toggler-icon {
         filter: invert(1);
     }
+
+    /* Home page starts */
     
     .banner-section {
         display: flex;
@@ -231,44 +779,44 @@
         line-height: 75px;
     }
     .card-custom {
-    width: 18rem;
-    margin-bottom: 30px !important;
-}
-.claim-section.py-5{
-   padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-}
+        width: 18rem;
+        margin-bottom: 30px !important;
+    }
+    .claim-section.py-5{
+    padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
     .claim-section .d-flex {
         flex-direction: column;
         align-items: center;
     }
-.blue-cta{
-    text-align: center;
-}
-.blue-cta .btn{
-    margin: 20px auto 0 !important;
-}
-.left-mobile-holder:before {
-    height: 185px;
-    background-size: contain;
-}
-.left-mobile-holder:after {
-    left: 0;
-    width: 353px;
-    height: 188px;
-    bottom: 115px;
-    background-size: 55%;
-}
-.platform-features-section, .pricing-section {
-    padding: 3rem 0 3rem;
-    background-size: contain;
-}
+    .blue-cta{
+        text-align: center;
+    }
+    .blue-cta .btn{
+        margin: 20px auto 0 !important;
+    }
+    .left-mobile-holder:before {
+        height: 185px;
+        background-size: contain;
+    }
+    .left-mobile-holder:after {
+        left: 0;
+        width: 353px;
+        height: 188px;
+        bottom: 115px;
+        background-size: 55%;
+    }
+    .platform-features-section, .pricing-section {
+        padding: 3rem 0 3rem;
+        background-size: contain;
+    }
 
-.pricing-section{
-    background: url(../images/hexa-bg-2.png) no-repeat top left;
-    background-size: contain;
-}
-.large-mobile {
+    .pricing-section{
+        background: url(../images/hexa-bg-2.png) no-repeat top left;
+        background-size: contain;
+    }
+    .large-mobile {
         z-index: 3;
         width: 52%;
         margin: 0 auto 55px !important;
@@ -287,138 +835,155 @@
         align-items: center;
         text-align: center;
     }
+    .pricing-section .d-flex.apps-icons{
+        flex-wrap: nowrap;
+    }
     .w-50 {
         width: 100% !important;
     }
     .w-75 {
         width: 100% !important;
     }
-    .w-25 {
-    width: 100% !important;
-}
+    .pricing-coulmn.w-25 {
+        width: 100% !important;
+    }
     .lh-sm {
-    line-height: 1.85 !important;
-}
-.platform-list li {
-        padding-left: 27px;
-        padding-top: 22px;
+        line-height: 1.85 !important;
+    }
+    .platform-list{
+        padding: 0;
+    }
+    .platform-list li {
+        padding-top: 0;
         text-align: left;
         font-size: 13px;
-}
-.platform-list li:before {
-    background-size: 18px;
-}
-.pricing-section .card img{
-    width: 90%;
-    margin-bottom: 20px;
-}
-.pricing-section .card.d-flex{
-    flex-wrap: nowrap;
-}
-.pricing-header {
-    padding: 18px 31px;
-    right: 0;
-    top: -25px;
-    left: 0;
-    margin: 0 auto;
-    width: 76% !important;
-}
-.pricing-card {
-    margin-bottom: 72px;
-    min-height: auto;
-    width: 100%;
-    padding: 50px 8px 30px;
-}
-.blue-bg-3 {
-    padding: 30px 15px;
-}
+        padding-bottom: 10px;
+        padding-left: 31px;
+    }
+    .platform-list li:before {
+        background-size: 18px;
+    }
+    .pricing-section .card img{
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .pricing-section .card.d-flex{
+        flex-wrap: nowrap;
+    }
+    .pricing-header {
+        padding: 18px 31px;
+        right: 0;
+        top: -25px;
+        left: 0;
+        margin: 0 auto;
+        width: 76% !important;
+    }
+    .pricing-card {
+        margin-bottom: 72px;
+        min-height: auto;
+        width: 100%;
+        padding: 50px 8px 30px;
+    }
+    .blue-bg-3 {
+        padding: 45px 45px 25px;
+        background: url(../images/blue-bg-3-mobile.png) no-repeat center;
+        background-size: cover;
+        text-align:center;
+    }
 
-.roofpro-section {
-    width: 90%;
-    margin: 0 auto 30px;
-    border-radius: 7px;
-    box-shadow: 0px 7px 14.8px 3px rgba(0, 0, 0, 0.25);
-}
+    .blue-bg-3 h3{font-size: 20px!important;
+        line-height: 32px!important;}
+
+    .roofpro-section {
+        width: 90%;
+        margin: 0 auto 30px;
+        border-radius: 7px;
+        box-shadow: 0px 7px 14.8px 3px rgba(0, 0, 0, 0.25);
+    }
     .roofpro-section img{
         width: 24%;
         margin: 0 !important;
     }
     .ylla-logo-holder {
         right: 0;
-        width: 35%;
+        margin: 0 auto;
+        left: 0;
+    }
+    .testimonial-section{
+        padding-top:0;
     }
     .testimonial-card{
-        margin: 0 20px;
-        padding: 20px;
+        margin: 0;
+        padding: 15px;
         text-align: center;
     }
-.testimonial-holder::before, .testimonial-holder::after {
-    width: 70%;
-    /* height: 46%; */
-    height: 70%;
-}
-.testimonial-holder {
-    padding: 50px 0;
-}
-.partners-section {
-    padding: 4rem 0 2rem;
-}
-.partner-item img {
-    width: 113px !important;
-    height: 54px;
-}
-.partner-item {
-    padding: 30px 10px;
-}
-footer {
-    padding: 2rem 0 0;
-}
+    .testimonial-holder::before, .testimonial-holder::after {
+        width: 70%;
+        /* height: 46%; */
+        height: 70%;
+    }
+    .testimonial-holder {
+        padding: 50px 0;
+    }
+    .partners-section {
+        padding: 4rem 0 2rem;
+    }
+    .partner-item img {
+        width: 113px !important;
+        height: 54px;
+    }
+    .partner-item {
+        padding: 30px 10px;
+    }
+    footer {
+        padding: 2rem 0 0;
+    }
 
-footer h2{
-    text-align: center;
-    margin-bottom: 50px !important;
-}
-.mt-5 {
-    margin-top: 2rem !important;
-}
+    footer h2{
+        text-align: center;
+        margin-bottom: 50px !important;
+    }
+    .mt-5 {
+        margin-top: 2rem !important;
+    }
 
-.contact-form {
-    width: 100%;
-}
-.btn-submit {
-    margin: 30px auto 50px !important;
-    display: table;
-}
-.contact-info {
-    width: 73%;
-    margin: 0 auto;
-}
-.contact-form input.form-field, .contact-form select.form-field{
-    padding:  20px 0;
-}
-.social {
-    margin: 0 auto !important;
-    width: 62%;
-}
-footer h5{
-    text-align: center;
-}
-.app-buttons {
-    width: 85%;
-    margin: 0 auto;
-    justify-content: center;
-}
-.app-buttons img {
-    /* width: 40%; */
-    width: 100%;
-}
-.bottom-footer {
-    padding: 1rem 0;
-    margin-top: 20px;
-}
-.copyright{
-    order: 2;
-}
+    .contact-form {
+        width: 100%;
+    }
+    .btn-submit {
+        margin: 30px auto 0 !important;
+        display: table;
+    }
+    .contact-info {
+        width: 73%;
+        margin: 0 auto;
+    }
+    .contact-form input.form-field, .contact-form select.form-field{
+        padding:  20px 0;
+    }
+    .social {
+        margin: 0 auto !important;
+        width: 50%;
+    }
+    footer h5{
+        text-align: center;
+    }
+    .app-buttons {
+        width: 85%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+    .app-buttons img {
+        /* width: 40%; */
+        width: 100%;
+    }
+    .bottom-footer {
+        padding: 1rem 0;
+        margin-top: 20px;
+    }
+    .copyright{
+        order: 2;
+    }
     .footer-nav {
         flex-wrap: wrap;
         padding: 0 0 20px;
@@ -427,13 +992,32 @@ footer h5{
     /* .footer-nav li {
         margin: 0 5px;
     } */
-.footer-nav li:not(:last-child)::after {
-    margin:0 10px;
-}
-.bottom-footer .justify-content-between {
-    justify-content: center !important;
-}
-.flex-md-nowwrap{
-    flex-wrap: wrap !important;
-}
+    .footer-nav li:not(:last-child)::after {
+        margin:0 10px;
+    }
+    .bottom-footer .justify-content-between {
+        justify-content: center !important;
+    }
+    .flex-md-nowwrap{
+        flex-wrap: wrap !important;
+    }
+    .pricing-section:after {
+        width: 104px;
+        height: 30%;
+        bottom: auto;
+        background-size: contain;
+        top: 29%;
+    }
+
+/* Privacy policy page */
+
+    .privacy-section{height: 300px;}
+
+    .privacy-section::after {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><g fill="%231F4392"><rect fill="%23FFF" width="100%" height="100%"/><path d="M0 0v4s250 96 500 96 500-96 500-96V0H0Z"></path></g></svg>');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+
 }

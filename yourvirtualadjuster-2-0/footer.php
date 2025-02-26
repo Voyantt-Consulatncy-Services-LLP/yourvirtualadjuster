@@ -15,8 +15,8 @@
             <div class="row">
                 <!-- Contact Form Section -->
                 <div class="col-lg-7">
-                    <h2 class="text-white font-w-500 font-xl secondary-font mb-5">Contact Form</h2>
-                    <form class="contact-form d-none">
+                    <h2 class="text-white font-w-500 font-xl secondary-font mb-lg-5 mb-4">Contact Form</h2>
+                    <!-- <form class="contact-form d-none">
                         <div class="row mb-5">
                             <div class="col-md-6">
                                 <input type="text" placeholder="Name *" class="form-field">
@@ -51,7 +51,7 @@
                             </select>
                         </div>
                         <button type="submit" class="btn btn-submit border-radius-xl">SUBMIT</button>
-                    </form>
+                    </form> -->
                     <?php 
                         echo do_shortcode('[contact-form-7 id="2af1a31" title="Contact form"]'); 
                     ?>
@@ -59,7 +59,7 @@
 
                 <!-- Get In Touch Section -->
                 <div class="col-lg-5 mt-4 mt-lg-0">
-                    <h2 class="text-white font-w-500 font-xl secondary-font mb-5">Get In Touch</h2>
+                    <h2 class="text-white font-w-500 font-xl secondary-font mb-lg-5 mb-4">Get In Touch</h2>
                     <div class="contact-info">
                         <div class="d-flex align-items-start justify-content-start mb-3">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/address-icon.svg" alt="" class="mt-3"> 
@@ -80,10 +80,10 @@
                         </div>
                     </div>
                     <ul class="social d-flex justify-content-start align-items-center mb-5">
-                        <li><a href="https://www.instagram.com/yourvirtualadjuster/"><i class="fa-brands fa-instagram"></i></a></li>
-                        <li><a href="https://www.facebook.com/YourVirtualAdjuster/"><i class="fa-brands fa-square-facebook"></i></a></li> 
-                        <li><a href="https://www.linkedin.com/company/yourvirtualadjuster/"><i class="fa-brands fa-linkedin"></i></a></li> 
-                        <li><a href="https://www.youtube.com/channel/UC1tRU9dtrqRpS5QaFNAsqmg?themeRefresh=1"><i class="fa-brands fa-youtube"></i></a></li>   
+                        <li><a href="https://www.instagram.com/yourvirtualadjuster/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/YourVirtualAdjuster/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a></li> 
+                        <li><a href="https://www.linkedin.com/company/yourvirtualadjuster/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li> 
+                        <li><a href="https://www.youtube.com/channel/UC1tRU9dtrqRpS5QaFNAsqmg?themeRefresh=1" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>   
                     </ul>
                     <h5 class="mt-5 text-white font-20 font-w-600 mb-3">DOWNLOAD OUR CLAIMS APP</h5>
                     <div class="app-buttons d-flex my-4">
@@ -100,7 +100,7 @@
         <!-- Footer Section -->
         <div class="bottom-footer border-top">
             <div class="container">
-                <div class="d-flex justify-content-between align-items-center flex-wrap flex-sm-wrap flex-md-nowwrap">
+                <div class="d-flex justify-content-between align-items-center flex-wrap">
                     <p class="text-white mb-0 pb-0 copyright"><small>Copyright © 2025 YOUR VIRTUAL ADJUSTER | All Rights Reserved.</small></p>
                     <ul class="footer-nav d-none justify-content-end align-items-center">
                         <li><a href="#">Home</a></li>
@@ -160,10 +160,19 @@
                     items: 3
                 },
                 600: {
-                    items: 4
+                    items: 3
                 },
-                1000: {
-                    items: 5
+                768: {
+                    items: 3 // Tablets
+                },
+                1024: {
+                    items: 4 // Small desktops/laptops
+                },
+                1200: {
+                    items: 5 // Desktops
+                },
+                1440: {
+                    items: 5 // Large desktops
                 }
             }
         });
