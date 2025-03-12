@@ -154,7 +154,8 @@
             nav: false,
             dots: false,
             autoplay: true,
-            smartSpeed: 1200,
+            autoplayTimeout: 2000,
+            smartSpeed: 200,
             responsive: {
                 0: {
                     items: 3
