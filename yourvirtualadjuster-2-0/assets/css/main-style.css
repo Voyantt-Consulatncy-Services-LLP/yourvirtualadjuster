@@ -604,7 +604,7 @@ header{
 .pricing-header {
     color: var(--white-color);
     background: var(--primary-color);
-    padding: 18px 40px;
+    padding: 18px 15px;
     font-weight: var(--font-weight-bold);
     border-radius: 12px;
     text-align: center;
@@ -613,6 +613,7 @@ header{
     right: -45px;
     top: -25px;
     transform: skewY(10deg);
+    width:250px;
 }
 /* For 2nd and 4th cards, change background to white and text color to primary */
 .pricing-coulmn:nth-child(2) .pricing-header,
@@ -624,7 +625,12 @@ header{
 .pricing-card .card-body{
     transform: skewY(10deg);
 }
-
+.apps-icons a{
+    transition: transform 0.3s ease-in-out;
+}
+.apps-icons a:hover{
+    transform: scale(1.1);
+}
 
 /**/
 .ylla-logo-holder{
@@ -780,7 +786,7 @@ footer {
     background: transparent;
     border: 1px solid var(--white-color);
     color: var(--white-color);
-    padding: 10px 0;
+    padding: 10px 10px;
     margin-bottom: 45px;
     width: 100%;
     border-width: 0 0 1px 0;
@@ -857,6 +863,12 @@ footer {
 }
 .footer-nav li a:hover{
     color: var(--secondary-color);
+}
+.app-buttons a{
+    transition: transform 0.3s ease-in-out;
+}
+.app-buttons a:hover{
+    transform: scale(1.1);
 }
 
 /* Privacy policy */

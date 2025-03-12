@@ -77,6 +77,7 @@
     .pricing-header{
         top: -15px;
         right: -25px;
+        width: 217px;
         padding: 12px 15px;
     }
     .large-mobile {
@@ -145,6 +146,9 @@
     }
     .partner-item{
         padding: 20px 10px;
+    }
+    .pricing-header{
+        width: 205px;
     }
 }
 
@@ -816,6 +820,9 @@
         background: url(../images/hexa-bg-2.png) no-repeat top left;
         background-size: contain;
     }
+    .pricing-section h3{
+        width: 100%;
+    }
     .large-mobile {
         z-index: 3;
         width: 52%;
@@ -887,7 +894,7 @@
     .blue-bg-3 {
         padding: 45px 45px 25px;
         background: url(../images/blue-bg-3-mobile.png) no-repeat center;
-        background-size: cover;
+        background-size: 100% 100%;
         text-align:center;
     }
 
